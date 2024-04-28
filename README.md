@@ -1,3 +1,3 @@
 # Module11
 Module11_Practical Application
-![GitHub Test](/Module11/Ridge_plot.png)
+![GitHub Test](Ridge_Plot.png)
