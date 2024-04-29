@@ -33,5 +33,5 @@ Findings:
 Overall, the model suggests that these features collectively contribute to predicting car prices. By analyzing these features, the used car business can gain insights into how each characteristic affects the pricing of vehicles in their inventory. This information can be valuable for setting competitive prices, understanding market trends, and making informed decisions about buying and selling used cars.
 
 
-
+![GitHub Test](Ridge_Plot.png)
 ![GitHub Test](Ridge_Plot.png)
