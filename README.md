@@ -17,7 +17,7 @@ The dataset to be used for the modeling process contains a large amount of uniqu
 
 Undstanding the data examples are running a count on missing data by feature and creating a plot to visualize the size of the issue. Below we can see that the 'size' feature has the largest amount of missing values at over 250,000 rows. Another important discovery is that just under 33,000 rows of 'price' value is equal to 0. Zero is not missing, but simply put, we cannot train or validate a model with target value of $0.00. Investigative steps like the previous examples continued for each of the features.
 
-![GitHub Test](RidgeModel_Results.png)
+![GitHub Test](MissingData.png)
 
 Understanding the data helps define the scope for the amount of effort needed in preparing the data for use in modeling. Besides fixes for missing values, several features were ommited from the analysis because they would not add any explanitory power to the model. Examples of these features include the vehicle's 'VIN' and the 'state' recording the transaction. Data preparation also includes data transformations. Examples of data transformations include hotone coding for the 'paint_color' feature.
 
