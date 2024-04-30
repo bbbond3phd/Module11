@@ -15,8 +15,13 @@ Once the business question has been clearly defined, the next step is to underst
 
 The dataset to be used for the modeling process contains a large amount of unique rows and approximately a dozen descriptive features of autos. But a brief description of the actual data file is not sufficiant to fulfill the second phase of CRISP-DM, that of understand the data. Understanding the data is the process of investigating the data at the feature and row level. Questions driving this phase include: how many unique data variables in each featuer?, are there outliers?, how much missing data is present,? how to handle missing data?, etc. 
 
-Undstanding the data examples are running a count on missing data by feature and creating a plot to visualize the size of the issue. Below we can see that the 'size' feature has the largest amount of missing values at over 250,000 rows. Another important discovery is that just under 33,000 rows of 'price' value is equal to 0. Zero is not missing, but simply put, we cannot train or validate a model with target value of $0.00. Investigative steps like the previous examples continued for each of the features.
+For myself, undstanding the data typically begins with visual reivew of the data. This can be accomplished several ways: run a df.head() command or run a pairplot of integers. Data professionals should be able to visually review and see apparent issues (see the pairplot below). Additional data exploration include running counts of missing data by feature and creating a plot to visualize the size of the issue. Below we can see that the 'size' feature has the largest amount of missing values at over 250,000 rows. Another important discovery is that just under 33,000 rows of 'price' value is equal to 0. Zero is not missing, but simply put, we cannot train or validate a model with target value of $0.00. Investigative steps like the previous examples continued for each of the features.
 
+Outliers impacting corrolation distribution:
+![GitHub Test](MissingData.png)
+
+
+Missing data by feature:
 ![GitHub Test](MissingData.png)
 
 Understanding the data helps define the scope for the amount of effort needed in preparing the data for use in modeling. Besides fixes for missing values, several features were ommited from the analysis because they would not add any explanitory power to the model. Examples of these features include the vehicle's 'VIN' and the 'state' recording the transaction. Data preparation also includes data transformations. Examples of data transformations include hotone coding for the 'paint_color' feature.
