@@ -13,25 +13,24 @@ Consulting engagements typically start with a small army of business consultants
 
 Once the business question has been clearly defined, the next step is to understand the business. Auto dealerships are retail outlets selling higher priced goods. Like any business, owners must be aware of typical business metrics such as margins, demand, yields, ect. By being aware of which auto features increase sales price, the owner can correctly price the auto for resale or purchase car with higher demand to restock inventory. In this instance the data can be thought of as business, meaning we do not have any back information informing us about the business. 
 
-The dataset to be used for the modeling process contains a large amount of unique rows and approximately a dozen descriptive features of autos. But a brief description of the actual data file is not sufficiant to fulfill the second phase of CRISP-DM, that of understand the data. Understanding the data is the process of investigating the data at the feature and row level. Questions driving this phase include: how many unique data variables in each featuer?, are there outliers?, how much missing data is present,? how to handle missing data?, etc. 
+The dataset to be used for the modeling process contains a large amount of unique rows and approximately a dozen descriptive features of autos. But a brief description of the actual data file is not sufficient to fulfill the second phase of CRISP-DM, that of understand the data. Understanding the data is the process of investigating the data at the feature and row level. Questions driving this phase include: how many unique data variables in each feature?, are there outliers?, how much missing data is present,? how to handle missing data?, etc. 
 
-For myself, undstanding the data typically begins with visual reivew of the data. This can be accomplished several ways: run a df.head() command or run a pairplot of integers. Data professionals should be able to visually review and see apparent issues (see the pairplot below). Additional data exploration include running counts of missing data by feature and creating a plot to visualize the size of the issue. Below we can see that the 'size' feature has the largest amount of missing values at over 250,000 rows. Another important discovery is that just under 33,000 rows of 'price' value is equal to 0. Zero is not missing, but simply put, we cannot train or validate a model with target value of $0.00. Investigative steps like the previous examples continued for each of the features.
+For myself, understanding the data typically begins with visual review of the data. This can be accomplished several ways: run a df.head() command or run a pairplot of integers. Data professionals should be able to visually review and see apparent issues (see the pairplot below). Additional data exploration include running counts of missing data by feature and creating a plot to visualize the size of the issue. Below we can see that the 'size' feature has the largest amount of missing values at over 250,000 rows. Another important discovery is that just under 33,000 rows of 'price' value is equal to 0. Zero is not missing, but simply put, we cannot train or validate a model with target value of $0.00. Investigative steps like the previous examples continued for each of the features.
 
 Outliers impacting corrolation distribution:
-![GitHub Test](MissingData.png)
-
+![GitHub Test](Pairplot_Outliers.png)
 
 Missing data by feature:
 ![GitHub Test](MissingData.png)
 
-Understanding the data helps define the scope for the amount of effort needed in preparing the data for use in modeling. Besides fixes for missing values, several features were ommited from the analysis because they would not add any explanitory power to the model. Examples of these features include the vehicle's 'VIN' and the 'state' recording the transaction. Data preparation also includes data transformations. Examples of data transformations include hotone coding for the 'paint_color' feature.
+Understanding the data helps define the scope for the amount of effort needed in preparing the data for use in modeling. Besides fixes for missing values, several features were omitted from the analysis because they would not add any explanatory power to the model. Examples of these features include the vehicle's 'VIN' and the 'state' recording the transaction. Data preparation also includes data transformations. Examples of data transformations take several forms, such as imputations (not used in this analysis), binning (used for 'year' feature) and recoding (onehotencoding for several features including 'paint_color').
 
-A thorough modeling process was undertaking for this practical application in effort to identify a champion model that clearly provides actionable insights for the client. 
-Initial models
+Modeling follows the data preparation step. For this practical application a thorough modeling process was undertaken in effort to identify a model that clearly provides actionable insights for the client. 
+Models created for the client include: OLS, linear regressions with various feature counts, polynomial feature regression models with various degrees and polynomial feature ridge model.  
 
 In this instance a ridge model using a highly curated dataset provided an output that outperformed other models based on the evaluation criteria of mean squared error and R-squared or intercept depending on the model method used.
 
-## Findings
+## Findings for the client
 The proposed client in this practical application is a used car dealership. Their request to to provide a clear understanding of the features that increase car values. Overall findings based on the best performing model (by measure of mean square error) containing the largest number of features resulted in the following recommendations:
 
 1. Odometer: The odometer reading (auto mileage) has a significant impact on the predicted price. Cars with lower mileage tend to have higher prices.
